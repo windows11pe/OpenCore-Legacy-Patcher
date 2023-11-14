@@ -364,7 +364,7 @@ class PatchSysVolume:
             logging.info(f"\nReason for Patch Failure ({result.returncode}):")
             logging.info(result.stdout.decode())
             logging.info("")
-            logging.info("\nPlease reboot the machine to avoid potential issues rerunning the patcher")
+            logging.info("This likely means you have incompatible kexts installed in /Library/Extensions/ - Please remove them and try again.")
             return False
 
         if self.skip_root_kmutil_requirement is True:
@@ -375,7 +375,6 @@ class PatchSysVolume:
                 logging.info(f"\nReason for Patch Failure ({result.returncode}):")
                 logging.info(result.stdout.decode())
                 logging.info("")
-                logging.info("\nPlease reboot the machine to avoid potential issues rerunning the patcher")
                 return False
 
             for file in ["KextPolicy", "KextPolicy-shm", "KextPolicy-wal"]:
@@ -944,7 +943,9 @@ class PatchSysVolume:
 
             return True
 
-        logging.info("- PatcherSupportPkg resources missing, Patcher likely corrupted!!!")
+        logging.info("Failed to located PatcherSupportPkg resources, this copy of OpenCore Legacy Patcher is likely corrupted.")
+        logging.info("Please redownload the application from https://github.com/dortania/OpenCore-Legacy-Patcher/releases")
+
         return False
 
 
@@ -956,6 +957,7 @@ class PatchSysVolume:
 
         logging.info("- Starting Patch Process")
         logging.info(f"- Determining Required Patch set for Darwin {self.constants.detected_os}")
+
         self.patch_set_dictionary = sys_patch_generate.GenerateRootPatchSets(self.computer.real_model, self.constants, self.hardware_details).patchset
 
         if self.patch_set_dictionary == {}:
