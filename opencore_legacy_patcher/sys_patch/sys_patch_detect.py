@@ -57,24 +57,54 @@ class DetectRootPatch:
         self.os_version: str = os_version
 
         self.computer = self.constants.computer
-
+        # 警告！下列内容为自定义OCLP使用的显卡补丁，请确认你的显卡架构在此其中，False为不使用这个补丁，Ture为使用这个补丁
+        #Warning! The following content is the grapehics card patch used for custom OCLP. Please confirm your graphics card architecture. False indicates not using this patch, and Ture indicates using this patch
         # GPU Patch Detection
         self.nvidia_tesla   = False
+        # NVIDIA 特斯拉架构显卡
+        #NVIDIA Tesla Architecture Graphics Card
         self.kepler_gpu     = False
+        # NVIDIA 开普勒架构显卡
+        #NVIDIA Kepler architecture graphics card
         self.nvidia_web     = False
+        # NVIDIA  webdriver支持的显卡
+        #NVIDIA webdriver supported graphics cards
         self.amd_ts1        = False
+        # AMD TS1架构显卡
+        #AMD TS1 architecture graphics card
         self.amd_ts2        = False
+        #AMD TS2架构显卡
+        #AMD TS2 architecture graphics card
         self.iron_gpu       = False
+        #intel Ironlake架构核心显卡
+        #Intel Ironlake architecture core graphics card
         self.sandy_gpu      = False
+        #intel sandy（二代）架构核心显卡
+        #Intel Sandy (second-generation) architecture core graphics card
         self.ivy_gpu        = False
+        #intel ivy（三代）架构核心显卡
+        #Intel ivy (third-generation) architecture core graphics card
         self.haswell_gpu    = False
+        #intel haswell（四代）架构核心显卡
+        #Intel Haswell (4th generation) architecture core graphics card
         self.broadwell_gpu  = False
+        #intel broadwell（五代）架构核心显卡
+        #Intel Broadwell (5th generation) architecture core graphics card
         self.skylake_gpu    = False
+        #intel skylake（六代）架构核心显卡
+        #Intel Skylake (6th generation) architecture core graphics card
         self.legacy_gcn     = False
+        #AMD 传统GCN架构显卡
+        #AMD Traditional GCN Architecture Graphics Card
         self.legacy_gcn_v2  = False
+        #AMD 传统GCN V2架构显卡
+        #AMD Traditional GCN V2 Architecture Graphics Card
         self.legacy_polaris = False
+        #AMD 传统polaris架构显卡
+        #AMD Traditional Polaris Architecture Graphics Card
         self.legacy_vega    = False
-
+        #AMD 传统vega架构显卡
+        #AMD Traditional Vega Architecture Graphics Card
         # Misc Patch Detection
         self.brightness_legacy         = False
         self.legacy_audio              = False
