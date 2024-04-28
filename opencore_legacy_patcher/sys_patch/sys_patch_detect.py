@@ -57,6 +57,7 @@ class DetectRootPatch:
         self.os_version: str = os_version
 
         self.computer = self.constants.computer
+
         # 警告！下列内容为自定义OCLP使用的显卡补丁，请确认你的显卡架构在此其中，False为不使用这个补丁，Ture为使用这个补丁
         #Warning! The following content is the grapehics card patch used for custom OCLP. Please confirm your graphics card architecture. False indicates not using this patch, and Ture indicates using this patch
         # GPU Patch Detection
@@ -105,6 +106,7 @@ class DetectRootPatch:
         self.legacy_vega    = False
         #AMD 传统vega架构显卡
         #AMD Traditional Vega Architecture Graphics Card
+        
         # Misc Patch Detection
         self.brightness_legacy         = False
         self.legacy_audio              = False
